@@ -29,7 +29,7 @@ def fetch_poster(movie_id):
 def read_root():
     return movies['title'].values.tolist()
 
-@app.route("/recommend/<string:movie>")
+@app.get("/recommend/{movie}")
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
