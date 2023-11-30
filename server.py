@@ -17,6 +17,20 @@ similarity = pickle.load(open('./helpers/similarity_movies.pkl', 'rb'))
 
 app = FastAPI()
 
+# remove cors error
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],)
+
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
     data = requests.get(url)
@@ -29,16 +43,31 @@ def fetch_poster(movie_id):
 def read_root():
     return movies['title'].values.tolist()
 
+# @app.get("/recommend/{movie}")
+# def recommend(movie):
+#     index = movies[movies['title'] == movie].index[0]
+#     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
+#     recommended_movie_names = []
+#     recommended_movie_posters = []
+#     for i in distances[1:6]:
+#         # fetch the movie poster
+#         movie_id = movies.iloc[i[0]].movie_id
+#         recommended_movie_posters.append(fetch_poster(movie_id))
+#         recommended_movie_names.append(movies.iloc[i[0]].title)
+
+#     return [recommended_movie_names,recommended_movie_posters]
+
 @app.get("/recommend/{movie}")
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
-    recommended_movie_names = []
-    recommended_movie_posters = []
+    # recommended_movie_names = []
+    # recommended_movie_posters = []
+    recommended_movie_data = {}
     for i in distances[1:6]:
         # fetch the movie poster
         movie_id = movies.iloc[i[0]].movie_id
-        recommended_movie_posters.append(fetch_poster(movie_id))
-        recommended_movie_names.append(movies.iloc[i[0]].title)
-
-    return [recommended_movie_names,recommended_movie_posters]
+        movie_poster = fetch_poster(movie_id)
+        movie_name = movies.iloc[i[0]].title
+        recommended_movie_data[movie_name] = movie_poster
+    return [recommended_movie_data]
