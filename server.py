@@ -12,8 +12,8 @@ load_dotenv()
 
 API_KEY=os.getenv("API_KEY")
 
-movies = pickle.load(open('movie_list.pkl', 'rb'))
-similarity = pickle.load(open('similarity_movies.pkl', 'rb'))
+movies = pickle.load(open('./helpers/movie_list.pkl', 'rb'))
+similarity = pickle.load(open('./helpers/similarity_movies.pkl', 'rb'))
 
 app = FastAPI()
 
