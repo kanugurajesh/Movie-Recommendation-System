@@ -8,18 +8,26 @@
     // create a variable to store the movie details
     let outputMovieDetails = [];
 
+    let isLoading = false;
+
     onMount(() => {
         // send a fetch request to / to get the movie names list
+
+        isLoading = true;
+
         fetch('http://localhost:8000/')
             .then((res) => res.json())
             .then((data) => {
                 // store the movie names list in the movieNames variable
                 movieNames = data;
-            });
+            }).finally(() => {
+                isLoading = false;
+            })
     });
 
     // create a function to handle the select change event
     function handleChange(event) {
+        isLoading = true;
         // get the selected movie name
         const selectedMovieName = event.target.value;
         // send a fetch request to /movie to get the movie details
@@ -27,7 +35,9 @@
             .then((res) => res.json())
             .then((data) => {
                 outputMovieDetails = data[0];
-            });
+            }).finally(() => {
+                isLoading = false;
+            })
     }
 
 </script>
@@ -40,16 +50,22 @@
         {/each}
     </select>
 
-    <div id="movie-details">
-        <!-- loop throught the outputmoviedetails  and get the key and value-->
-        {#each Object.entries(outputMovieDetails) as [key, value]}
-            <!-- <p>{key}: <img src="{value}" alt=""></p> -->
-            <div>
-                <img src="{value}" alt="{key}">
-                <span>{key}</span>
-            </div>
-        {/each}
-    </div>
+    {#if isLoading}
+        <div class="loader"></div>
+    {/if}
+
+    {#if !isLoading}
+        <div id="movie-details">
+            <!-- loop throught the outputmoviedetails  and get the key and value-->
+            {#each Object.entries(outputMovieDetails) as [key, value]}
+                <!-- <p>{key}: <img src="{value}" alt=""></p> -->
+                <div>
+                    <img src="{value}" alt="{key}">
+                    <span>{key}</span>
+                </div>
+            {/each}
+        </div>
+    {/if}
 
 </main>
 
@@ -92,6 +108,28 @@
     #movie-details div img {
         width: 200px;
         height: 200px;
+    }
+
+    .loader {
+        margin-top: 10px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 
 </style>
