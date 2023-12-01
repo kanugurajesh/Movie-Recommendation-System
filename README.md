@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://github.com/kanugurajesh/Movie-Recommendation-System/assets/120458029/2bbfdf3a-b176-4717-bc77-1fed59024452" alt="data" width="200" height="200">
+</div>
+
 # Movie Recommendation System
 
 Welcome to the Movie Recommendation System, your go-to solution for discovering new and exciting movies based on your preferences. Our system is built on a comprehensive dataset of 5000 movies, ensuring accurate and personalized recommendations.
