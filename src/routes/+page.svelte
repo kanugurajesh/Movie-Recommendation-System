@@ -99,18 +99,22 @@
         flex-direction: column;
         text-align: center;
         gap: 10px;
-        max-width: 200px;
-        max-height: 300px;
         width: 200px;
-        height: 300px;
+        height: 240px;
         line-height: 20px;
         font-weight: bold;
         font-size: medium;
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 10px;
+        /* Add a box shadow */
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     #movie-details div img {
         width: 200px;
         height: 200px;
+        border-radius: 10px;
     }
 
     .loader {
