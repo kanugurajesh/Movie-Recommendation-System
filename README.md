@@ -53,6 +53,10 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
 6. **Enjoy Your Recommendations:**
     Sit back and let our system generate personalized movie recommendations just for you!
 
+# Demo
+
+![movie](https://github.com/kanugurajesh/Movie-Recommendation-System/assets/120458029/eb421931-afc3-4af8-b11c-8a4b6fb6f68e)
+
 ## Contribution Guidelines
 
 We welcome contributions to enhance and improve the Movie Recommendation System. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
