@@ -91,6 +91,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+        flex-wrap: wrap;
     }
 
     #movie-details div {
@@ -99,7 +100,9 @@
         text-align: center;
         gap: 10px;
         max-width: 200px;
-        max-height: 200px;
+        max-height: 300px;
+        width: 200px;
+        height: 300px;
         line-height: 20px;
         font-weight: bold;
         font-size: medium;
