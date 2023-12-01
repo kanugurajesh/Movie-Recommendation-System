@@ -6,12 +6,12 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/movie-recommendation-system.git
+    git clone https://github.com/kanugurajesh/Movie-Recommendation-System.git
     ```
 
 2. **Navigate to the Project Directory:**
     ```bash
-    cd movie-recommendation-system
+    cd Movie-Recommendation-System
     ```
 
 3. **Install Dependencies:**
