@@ -36,27 +36,27 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
    cp .env.example .env
    go to themoviedb and get an api key and add it in .env
    ```
-
-4. **Run the System[Backend]:**
-    ```bash
-    activate the env[python environment]
-    uvicorn server:app --reload
-    ```
 5. **Run the jupyter notebook**
    ```bash
    mkdir helpers
    Run the notebook till the last cell and save the movies_list.pkl and similarity_movie.pkl in the helpers folder
    ```
+
+6. **Run the System[Backend]:**
+    ```bash
+    activate the env[python environment]
+    uvicorn server:app --reload
+    ```
     
-5. **Run the System[Frontend]:**
+7. **Run the System[Frontend]:**
    ```bash
    npm run dev   
    ```
 
-5. **Input Your Favorite Movie:**
+8. **Input Your Favorite Movie:**
     Select your favourite movie from the list of movies
 
-6. **Enjoy Your Recommendations:**
+9. **Enjoy Your Recommendations:**
     Sit back and let our system generate personalized movie recommendations just for you!
 
 # Demo
