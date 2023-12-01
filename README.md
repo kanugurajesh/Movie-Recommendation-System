@@ -45,7 +45,7 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
 5. **Run the jupyter notebook**
    ```bash
    mkdir helpers
-   Run the notebook till the last cell and save the movie_list.pkl and similarity_movie.pkl in the helpers folder
+   Run the notebook till the last cell and save the movies_list.pkl and similarity_movie.pkl in the helpers folder
    ```
     
 5. **Run the System[Frontend]:**
