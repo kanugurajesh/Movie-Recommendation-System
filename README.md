@@ -14,18 +14,36 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
     cd Movie-Recommendation-System
     ```
 
-3. **Install Dependencies:**
+3. **Installing the frontend**
     ```bash
+    npm install
+    ```
+
+3. **Installing the backend:**
+    ```bash
+    python -m venv env
+    env/bin/activate
     pip install -r requirements.txt
     ```
 
-4. **Run the System:**
+4. **Setting up .env**
+   ```bash
+   cp .env.example .env
+   go to themoviedb and get an api key and add it in .env
+   ```
+
+4. **Run the System[Backend]:**
     ```bash
-    python recommendation_system.py
+    activate the env[python environment]
+    uvicorn server:app --reload
     ```
+5. **Run the System[Frontend]:**
+   ```bash
+   npm run dev   
+   ```
 
 5. **Input Your Favorite Movie:**
-    Follow the on-screen prompts to enter the title of your favorite movie.
+    Select your favourite movie from the list of movies
 
 6. **Enjoy Your Recommendations:**
     Sit back and let our system generate personalized movie recommendations just for you!
@@ -36,7 +54,7 @@ We welcome contributions to enhance and improve the Movie Recommendation System.
 
 ## Feedback and Issues
 
-If you encounter any issues or have feedback, please open an issue on our [GitHub repository](https://github.com/your-username/movie-recommendation-system/issues). We appreciate your input and strive to make our system better with each update.
+If you encounter any issues or have feedback, please open an issue on our [GitHub repository](https://github.com/kanugurajesh/Movie-Recommendation-System/issues). We appreciate your input and strive to make our system better with each update.
 
 ## License
 
