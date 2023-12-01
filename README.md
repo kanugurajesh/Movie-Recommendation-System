@@ -71,6 +71,10 @@ We welcome contributions to enhance and improve the Movie Recommendation System.
 
 If you encounter any issues or have feedback, please open an issue on our [GitHub repository](https://github.com/kanugurajesh/Movie-Recommendation-System/issues). We appreciate your input and strive to make our system better with each update.
 
+## Authors
+
+- [@kanugurajesh](https://www.github.com/kanugurajesh)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
