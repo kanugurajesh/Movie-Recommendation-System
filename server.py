@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 # load the environment variables
 load_dotenv()
 
+# Loading the API_KEY
 API_KEY=os.getenv("API_KEY")
 
 movies = pickle.load(open('./helpers/movie_list.pkl', 'rb'))
