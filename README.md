@@ -35,6 +35,10 @@
 
 Let the movie magic begin! 🎉✨
 
+## Architecture
+
+![Screenshot 2023-12-01 215755](https://github.com/kanugurajesh/Movie-Recommendation-System/assets/120458029/b4af7a2b-f037-4e37-bbe3-80a53b41b6d8)
+
 ## How to Use
 
 1. **Clone the Repository:**
