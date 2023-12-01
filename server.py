@@ -71,3 +71,4 @@ def recommend(movie):
         movie_name = movies.iloc[i[0]].title
         recommended_movie_data[movie_name] = movie_poster
     return [recommended_movie_data]
+    
