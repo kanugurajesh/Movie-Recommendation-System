@@ -42,6 +42,12 @@ Welcome to the Movie Recommendation System, your go-to solution for discovering 
     activate the env[python environment]
     uvicorn server:app --reload
     ```
+5. **Run the jupyter notebook**
+   ```bash
+   mkdir helpers
+   Run the notebook till the last cell and save the movie_list.pkl and similarity_movie.pkl in the helpers folder
+   ```
+    
 5. **Run the System[Frontend]:**
    ```bash
    npm run dev   
