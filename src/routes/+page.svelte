@@ -45,6 +45,7 @@
 <main>
     
     <select name="cars" id="cars" on:change={handleChange}>
+        <option value="" disabled selected>Select a movie</option>
         {#each movieNames as movieName}
             <option value={movieName}>{movieName}</option>
         {/each}
@@ -58,7 +59,6 @@
         <div id="movie-details">
             <!-- loop throught the outputmoviedetails  and get the key and value-->
             {#each Object.entries(outputMovieDetails) as [key, value]}
-                <!-- <p>{key}: <img src="{value}" alt=""></p> -->
                 <div>
                     <img src="{value}" alt="{key}">
                     <span>{key}</span>
