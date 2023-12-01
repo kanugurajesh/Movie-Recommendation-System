@@ -45,8 +45,9 @@
 <main>
     
     <select name="cars" id="cars" on:change={handleChange}>
+        <option value="" disabled selected class="option">Select a movie</option>
         {#each movieNames as movieName}
-            <option value={movieName}>{movieName}</option>
+            <option value={movieName} class="option">{movieName}</option>
         {/each}
     </select>
 
@@ -58,7 +59,6 @@
         <div id="movie-details">
             <!-- loop throught the outputmoviedetails  and get the key and value-->
             {#each Object.entries(outputMovieDetails) as [key, value]}
-                <!-- <p>{key}: <img src="{value}" alt=""></p> -->
                 <div>
                     <img src="{value}" alt="{key}">
                     <span>{key}</span>
@@ -73,7 +73,7 @@
 
     #cars {
         margin: 50px;
-        height: 30px;
+        height: 40px;
         border-radius: 10px;
         padding-left: 10px;
     }
@@ -137,6 +137,12 @@
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
+    }
+
+    .option {
+        font-size: 15px;
+        height: 20px;
+        padding: 10px;
     }
 
 </style>
